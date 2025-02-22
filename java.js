@@ -165,9 +165,12 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     let whatsappUrl = `https://wa.me/7338189666?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
 });
+document.body.classList.add("light-mode");
 document.getElementById("da-mode").addEventListener("click", function () {
-    document.body.classList.toggle("dark-mode");
+    document.body.classList.remove("light-mode");
+    document.body.classList.add("dark-mode");
 });
 document.getElementById("li-mode").addEventListener("click", function () {
-    document.body.classList.toggle("light-mode");
+    document.body.classList.remove("dark-mode");
+    document.body.classList.add("light-mode");
 });
