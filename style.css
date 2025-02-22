@@ -1,3 +1,7 @@
+body{
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
 .buttons {
     position: fixed;  
     top: 10px;  
@@ -33,26 +37,110 @@
     animation: bounce 1s infinite;
     background: #ddd; 
 }
-header {
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+.video video {
+    width: 110%;
+    height: 100%;
+    object-fit: fill;
+}
+header {    
     width: 100%;
-    background: linear-gradient(to left, #690c97, #c3540b);
-    color: #ddd;
-    padding: 150px 0;
+    color: #000000;
+    padding: 220px;
+    text-align: center;
+    font-size: 30px;
+}
+.navcont {
+    display: flex;
+    justify-content: flex-start; /* Aligns items to the left */
+    align-items: center; /* Centers items vertically */
+    gap: 20px; /* Space between buttons */
+    padding: 15px 30px; /* Padding for spacing */
+    background-color: transparent; /* No background */
+    position: absolute; /* Keeps it fixed at the top-left */
+    top: 0;
+    left: 0;
+}
+.navcont button {
+    background: none;
+    border: none;
+    color: #000000; /* Default text color */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 20px 15px;
+    position: relative; /* Needed for underline effect */
+    transition: color 0.3s ease-in-out;
+}
+.navcont button::after {
+    content: ""; /* Required for pseudo-elements */
+    position: absolute;
+    left: 50%;
+    bottom: 5px; /* Adjust underline position */
+    width: 0%;
+    height: 3px;
+    background-color: #079740; /* Underline color */
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+.navcont button:hover {
+    color: #12ab4d; /* Changes text color on hover */
+}
+
+.navcont button:hover::after {
+    width: 100%;
+    left: 0;
+}
+.about-me {
+    display: inline-block; 
+    min-width: 350px; 
+    text-align: left; 
+}
+.ab {
+    text-align: left;
+    font-size: 30px;
+    color: #000000;
+    width: 80%;
+    margin: auto;
+}
+.ab h2 {
+    text-align: center;
+    width: 100%;
+}
+.content1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.text1 {
+    width: 60%;
+    font-size: 20px;
+}
+.mypic {
+    width: 35%;
     text-align: center;
 }
 .mypic img {
-    width: 300px;  
-    height: 300px;
-    border-radius: 50%; 
-    object-fit: cover; 
-    border: 5px solid #a767d4; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    border: 5px solid #eee8b4;
+    object-fit: cover;
 }
-.about-me {
-    display: inline-block; /* Allows the application of width */
-    min-width: 350px; /* Adjust based on your longest text */
-    text-align: left; /* Aligns the text to the left */
+.mypic img{
+    animation: bounce 5s infinite;
+    background: #ddd;
+
 }
+
+
 .skills{
     width: 100%;
     color: #070606;
@@ -68,7 +156,7 @@ header {
     padding: 0;
 }
 .listskills li {
-    background-color: #7e8a8f0b;
+    background-color: #ffffff0b;
     color: rgb(0, 0, 0);
     padding: 15px 20px;
     border-radius: 12px;
@@ -91,6 +179,7 @@ header {
         transform: translateY(-10px);
     }
 }
+
 .listskills {
     animation: dan 5s infinite; 
 }
@@ -130,7 +219,7 @@ header {
     width: 300px;
     height: 100%;
     top: 0;
-    background: linear-gradient(to right, rgb(109, 12, 206), rgb(228, 15, 51)); /* Fade effect */
+    background: linear-gradient(to top,hsl(0, 0%, 100%), #eef1b8); /* Fade effect */
     z-index: 1;
 }
 .ic-container::before {
@@ -151,11 +240,11 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Space between cards */
+    gap: 20px; 
 }
 
 .pro1, .pro2, .pro3, .pro4 {
-    background: linear-gradient(to right, #831bcd, #f9620b);
+    background: linear-gradient(to right,hsl(0, 0%, 100%), #e4e390);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -167,20 +256,18 @@ header {
     width: 100%;
     border-radius: 10px;
 }
-
-
 .btn {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 15px;
-    background-color: #6a0dad;
+    background-color: #f7f0a3;
     color: white;
     text-decoration: none;
     border-radius: 5px;
 }
 
 .btn:hover {
-    background-color: #500a80;
+    background-color: #fffa6b;
 }
 .modal {
     display: none;
@@ -193,16 +280,14 @@ header {
     justify-content: center;
     align-items: center;
 }
-
 .modal-content {
-    background:linear-gradient(to right,rgb(235, 131, 131),rgb(158, 158, 213));
+    background:#f3efcd;
     padding: 20px;
     border-radius: 10px;
     width: 1000px;
     text-align: left;
     position: relative;
 }
-
 .close,.close1,.close2,.close3,.close4 {
     position: absolute;
     top: 10px;
@@ -216,8 +301,8 @@ header {
 }
 footer {
     width: 100%;
-    background: linear-gradient(to right, #171617, #f9620b);
-    color: #fff;
+    background: linear-gradient(to top, hsl(67, 30%, 82%), #ffffff);
+    color: #000000;
     padding: 40px 0;
     text-align: center;
 }
@@ -227,7 +312,7 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: linear-gradient(to right,#831bcd, #f9620b);
+    background: #a6def0;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
@@ -259,7 +344,7 @@ input {
     margin: 10px 0;
 }
 .sendbtn {
-    background-color: rgb(115, 20, 198);
+    background-color: rgb(6, 74, 79);
     color: rgb(247, 242, 242);
     padding: 10px;
     border: none;
@@ -270,14 +355,25 @@ input {
     color: white;
 }
 .light-mode {
-    background-color: rgb(255, 251, 251);
+    background-color:rgb(255, 252, 227); 
     color: rgb(7, 6, 6);
 }
 .dark-mode .skills h2,
+.dark-mode .ab h2,
+.dark-mode .content1 {
+    color: rgb(255, 255, 255);
+}
 .dark-mode .listskills li {
-    color: white;
+    background-color: white;
+}
+.dark-mode .mypic img{
+    border: 5px solid #ffffff;
 }
 .light-mode .skills h2,
-.light-mode .listskills li {
+.light-mode .ab h2,
+.light-mode .content1 {
     color: rgb(6, 6, 6);
+}
+.light-mode .listskills li{
+    background-color: white;
 }
